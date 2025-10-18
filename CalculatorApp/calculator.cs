@@ -24,6 +24,7 @@ class Program
         Console.WriteLine("6. Root");
         Console.WriteLine("7. Equation");
         Console.WriteLine("8. Logarithm (base 10 and base e)");
+        Console.WriteLine("9. Matrix");
         string operation = Console.ReadLine();
         if (operation == "1")
         {
@@ -183,7 +184,7 @@ class Program
                 Console.ReadKey();
                 Console.Clear();
             }
-            else if( baseChoice == "3")
+            else if (baseChoice == "3")
             {
                 Console.WriteLine("Enter the base of the logarithm:");
                 double baseNum = Convert.ToDouble(Console.ReadLine());
@@ -194,6 +195,34 @@ class Program
                 Console.ReadKey();
                 Console.Clear();
             }
+        }
+        else if (operation == "9")
+        {
+            Console.WriteLine("Add the top left number of the matrix:");
+            double a11 = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Add the top right number of the matrix:");
+            double a12 = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Add the bottom left number of the matrix:");
+            double a21 = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Add the bottom right number of the matrix:");
+            double a22 = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("The matrix you have created is:");
+            Console.WriteLine($"| {a11} {a12} |");
+            Console.WriteLine($"| {a21} {a22} |");
+            Console.WriteLine("The answers for the matrix are:");
+            double determinant = a11 * a22 - a12 * a21;
+            Console.WriteLine($"Determinant: {determinant}");
+            double determinantY = a21 * a12 - a22 * a11;
+            Console.WriteLine($"Determinant Y: {determinantY}");
+            double determinantX = a11 * a22 - a12 * a21;
+            Console.WriteLine($"Determinant X: {determinantX}");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
         }
         else
         {
